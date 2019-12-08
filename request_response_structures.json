@@ -1,0 +1,44 @@
+3_sender_transaction_initiation_request:
+{
+	sender_offline_wallet_id: 'xaxasdcadscsdsf1',
+	sender_transaction_id: 'qweq1131sqda21', <-- auto generated at sender
+	sender_totp: 789456,
+	requested_amount: 500,
+}
+
+
+4_receiver_transaction_request:
+{
+	sender_transaction_initiation_request: <3_sender_transaction_initiation_request>,
+	receiver_offline_wallet_id: '456445sdadscsdsf1',
+	receiver_totp: 964741
+}
+
+6_server_transaction_initiation_reponse:
+{
+	server_transaction_id: 'as456a484sa5d',
+	status: {
+		authentication_status: SUCCESS | FAILURE
+	}
+}
+
+7.2_senders_message:{
+	server_transaction_id: 'as456a484sa5d',
+	sender_OTP: 4548941
+}
+
+8_response_structure:
+{
+	server_transaction_id: 'as456a484sa5d',
+	sender_OTP: 4548941,
+	sender_wallet_pin: 5848
+}
+
+9_receiver_forward:
+{
+	is_valid: 'true'
+	server_transaction_id: 'as456a484sa5d',
+	sender_OTP: 4548941,
+	sender_wallet_pin: 5848
+}
+
